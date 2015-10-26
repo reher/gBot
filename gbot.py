@@ -100,10 +100,7 @@ class commands:
         req = urllib.request.urlopen(url)
         resp = req.read()
         joke = json.loads(resp.decode('utf8'))
-        if(len(msg) < 2): # eliminate extra space when only a fist name is provided
-            say((joke['value']['joke'])[:(joke['value']['joke']).find(msg[0]) + len(msg[0])] + (joke['value']['joke'])[(joke['value']['joke']).find(msg[0]) + len(msg[0])+1:])
-        else:
-            say(joke['value']['joke'])
+        say(joke['value']['joke'])
 
     cmdlist ={
         "!swag" : swag,
